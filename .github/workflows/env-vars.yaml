@@ -27,6 +27,6 @@ jobs:
     steps:
       - name: Inspect scopes job 2 step 2
         run: |
-         echo "WORKFLOW_VAR1: $WORKFLOW_VAR1"
-         echo "JOB_VAR1: '${JOB_VAR1:-<UNSET>}"'
-         echo "STEP_VAR1: '${STEP_VAR1:-<UNSET>}"'
+          echo "WORKFLOW_VAR1: $WORKFLOW_VAR1"
+          echo "JOB_VAR1: ${JOB_VAR1:-<UNSET>}"
+          echo "STEP_VAR1: ${STEP_VAR1:-<UNSET>}"
