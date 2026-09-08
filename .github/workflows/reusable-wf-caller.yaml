@@ -1,0 +1,23 @@
+name: Reusable workflow Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable-workflow-path:
+    name: Invoke reusable workflow with relative path
+    uses: ./.github/workflows/reusable-wf-source.yaml
+    with:
+      foo: bar
+      environment: staging
+    # inherit will enable and give access to env secrets variables in source workflow
+    secrets: inherit
+
+  call-reusable-workflow-sha:
+    name: Invoke reusable workflow with repo + commit hash
+    uses: saratkumar17mss040/github-actions-learning/.github/workflows/reusable-wf-source.yaml@
+    with:
+      foo: bar
+      environment: production
+    secrets:
+      EXAMPLE_REPOSITORY_SECRET: ${{ secrets.EXAMPLE_REPOSITORY_SECRET }}
