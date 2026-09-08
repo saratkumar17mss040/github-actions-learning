@@ -15,8 +15,7 @@ jobs:
 
   call-reusable-workflow-sha:
     name: Invoke reusable workflow with repo + commit hash
-    uses: ./.github/workflows/reusable-wf-source.yaml
-    # uses: saratkumar17mss040/github-actions-learning/.github/workflows/reusable-wf-source.yaml@
+    uses: saratkumar17mss040/github-actions-learning/.github/workflows/reusable-wf-source.yaml@eac416fb13168c9a6dfb4b39910c54ae1e5b42c1
     with:
       foo: bar
       environment: production
